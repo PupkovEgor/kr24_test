@@ -32,7 +32,7 @@ public class CreatePDF {
 			for(int i=0;i<(lengthpath-1);i++) {
 				abspath=abspath+parsfilepath[i]+"/";
 			}
-			filepath=abspath+"src/main/webapp/Check.pdf";
+			filepath=abspath+"webapps/Calculate/Check.pdf";
 			String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";
 	    	
 			try {	

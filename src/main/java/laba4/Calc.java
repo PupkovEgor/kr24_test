@@ -38,9 +38,6 @@ public class Calc extends HttpServlet {
 		Calc.setAsRequestAttributesAndCalculate(request);
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);
 		
-		String pdf = "Calculate/Check.pdf";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(pdf);
-		dispatcher.forward(request, response);
 			
 		CreatePDF PDF = new CreatePDF();
 		String goals = "Hello";
