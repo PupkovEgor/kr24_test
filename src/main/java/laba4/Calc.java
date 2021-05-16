@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +37,10 @@ public class Calc extends HttpServlet {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);
+		
+		String pdf = "Calculate/Check.pdf";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(pdf);
+		dispatcher.forward(request, response);
 			
 		CreatePDF PDF = new CreatePDF();
 		String goals = "Hello";
