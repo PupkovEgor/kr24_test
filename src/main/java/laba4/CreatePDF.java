@@ -25,15 +25,15 @@ public class CreatePDF {
 	    	Document document = new Document(); //ñîçäàíèå êëàññà Document
 	    	
 	    	String filepath = new File("").getCanonicalPath();
-			String[] parsfilepath = filepath.split("/");
+			/*String[] parsfilepath = filepath.split("/");
 			
 			int lengthpath = parsfilepath.length;
 			String abspath=""; 
 			for(int i=0;i<(lengthpath-1);i++) {
 				abspath=abspath+parsfilepath[i]+"/";
-			}
-			filepath=abspath+"webapps/Calculate/Check.pdf";
-			String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";
+			}*/
+			filepath="/Check.pdf";
+			//String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";
 	    	
 			try {	
 				PdfWriter.getInstance(document, new FileOutputStream(filepath));
@@ -45,7 +45,7 @@ public class CreatePDF {
 			
 			BaseFont times = null;
 			try {
-				times = BaseFont.createFont(fontpath, "UTF-8", BaseFont.EMBEDDED);
+				times = BaseFont.createFont(fontpath, "cp1251", BaseFont.EMBEDDED);
 			} catch (DocumentException | IOException e) {
 				e.printStackTrace();
 			}
