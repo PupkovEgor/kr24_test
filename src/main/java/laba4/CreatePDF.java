@@ -27,12 +27,12 @@ public class CreatePDF {
 	    	Document document = new Document(); //ñîçäàíèå êëàññà Document
 	    	try {
 	    	filepath = new File("").getCanonicalPath();
-			/*String[] parsfilepath = filepath.split("/");			
+			String[] parsfilepath = filepath.split("/");			
 			int lengthpath = parsfilepath.length;
 			String abspath=""; 
 			for(int i=0;i<(lengthpath-1);i++) {
 				abspath=abspath+parsfilepath[i]+"/";
-			}*/
+			}
 			filepath="/Check.pdf";
 			//String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";	    	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
