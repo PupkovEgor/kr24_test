@@ -23,7 +23,7 @@ public class CreatePDF {
 	    	
 	    }
 	    public void Create(String numberpdf) throws IOException {
-	      	
+	      	File file = new File("Check.pdf");
 	    	Document document = new Document(); //ñîçäàíèå êëàññà Document
 	    	try {
 	    	/*filepath = new File("").getCanonicalPath();
@@ -35,7 +35,7 @@ public class CreatePDF {
 			}*/
 			//filepath="/Check.pdf";
 			//String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";	    	
-			PdfWriter.getInstance(document, new FileOutputStream("app/tmp/Check.pdf"));
+			PdfWriter.getInstance(document, new FileOutputStream(file));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
