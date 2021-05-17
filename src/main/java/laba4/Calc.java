@@ -43,6 +43,7 @@ public class Calc extends HttpServlet {
 		String goals = "Hello";
 		PDF.Create(goals);
 	
+		
 	}
 	private static class RequestCalc {
 		private final String cenaKarkas;
