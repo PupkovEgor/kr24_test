@@ -37,9 +37,6 @@ public class Calc extends HttpServlet {
 		RequestCalc Calc = RequestCalc.fromRequestParameters(request);
 		Calc.setAsRequestAttributesAndCalculate(request);
 		
-		CreatePDF PDF = new CreatePDF();
-		String goals = "Hello";
-		PDF.Create(goals);
 			
 		//KarkasGet=PDF.filepath;
 		//request.setAttribute("Karkas", KarkasGet);

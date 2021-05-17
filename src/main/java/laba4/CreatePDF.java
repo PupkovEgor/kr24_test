@@ -1,10 +1,17 @@
 package laba4;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -15,14 +22,15 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 
-public class CreatePDF {
+public class CreatePDF extends HttpServlet{
 	
 	//public String filepath;
 
-	  public CreatePDF() {
+	  public CreatePDF()  {
 	    	
 	    }
-	    public void Create(String numberpdf) throws IOException {
+	  protected void Create (HttpServletRequest request,
+	            HttpServletResponse response) throws ServletException, IOException {
 	      	File file = new File("Check.pdf");
 	    	Document document = new Document(); //ñîçäàíèå êëàññà Document
 	    	try {
@@ -97,7 +105,30 @@ public class CreatePDF {
 			}
 		    
 		    document.close(); //çàêðûòèå è ñîõðàíåíèå äîêóìåíòà PDF
-	    }
+		    
+		    ServletOutputStream outputStream = null;
+		    BufferedInputStream inputStream = null;
+		    
+		    try {
+		        outputStream = response.getOutputStream();
+		        response.setContentType("application/vnd.ms-excel");
+		        response.setHeader("Content-Disposition", "attachment; filename=\"" + file + "\"");
+		        response.setContentLength((int) file.length());
+		        FileInputStream fileInputStream = new FileInputStream(file);
+		        inputStream = new BufferedInputStream(fileInputStream);
+		        int readBytes = 0;
+		        while ((readBytes = inputStream.read()) != -1)
+		            outputStream.write(readBytes);
+		    }catch (NullPointerException e){
+		        e.printStackTrace();
+		    }finally {
+		        outputStream.flush();
+		        outputStream.close();
+		        inputStream.close();
+		    }
+		}
+
+	   
 	    
 
 	private void addColumns(PdfPTable table) {
