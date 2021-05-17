@@ -16,6 +16,8 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 
 public class CreatePDF {
+	
+	public String filepath;
 
 	  public CreatePDF() {
 	    	
