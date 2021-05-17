@@ -41,8 +41,8 @@ public class Calc extends HttpServlet {
 		String goals = "Hello";
 		PDF.Create(goals);
 			
-		KarkasGet=PDF.filepath;
-		request.setAttribute("Karkas", KarkasGet);
+		//KarkasGet=PDF.filepath;
+		//request.setAttribute("Karkas", KarkasGet);
 	
 		request.getRequestDispatcher("/Results.jsp").forward(request, response);
 	}
