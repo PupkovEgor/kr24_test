@@ -21,8 +21,8 @@
 <p><strong>Стоимость работы за 1 стул:</strong> ${five_result}</p>
 <p><strong>Срочный заказ:</strong> ${checked}</p>
 <p><strong>Итоговая стоимость:</strong> ${result}</p>
-<a href="/Calculate/Check.pdf"> Open PDF-file</a>	
-<a href="/Calculate/Check.pdf>" download> Download PDF-file</a>
+<a href="webapps/Calculate/Check.pdf"> Open PDF-file</a>	
+<a href="webapps/Calculate/Check.pdf>" download> Download PDF-file</a>
 <form action="${pageContext.request.contextPath}/Read" method="post" >
 	<input type="submit" name="sign" value="Назад">
 	</form>
