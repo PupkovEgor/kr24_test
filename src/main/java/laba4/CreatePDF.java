@@ -13,6 +13,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.sun.tools.javac.comp.Check;
 
 
 public class CreatePDF {
@@ -35,7 +36,7 @@ public class CreatePDF {
 			}
 			filepath="/Check.pdf";
 			//String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";	    	
-			PdfWriter.getInstance(document, new FileOutputStream(filepath));
+			PdfWriter.getInstance(document, new FileOutputStream("/Check.pdf"));
 			} catch (FileNotFoundException | DocumentException e) {
 				e.printStackTrace();
 			}
