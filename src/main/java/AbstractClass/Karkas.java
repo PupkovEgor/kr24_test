@@ -7,6 +7,6 @@ public class Karkas extends Materials {
 	   }
 	@Override
 	public void setPrice(String price) {
-		this.price = price;
+		this.price = price; //alo
 	}
 }
